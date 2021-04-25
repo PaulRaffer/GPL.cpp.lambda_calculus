@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../lambda_calculus.hpp
+functional
+-
+iostream
+-
+short_begin.hpp
+../../short_begin.hpp
+short_end.hpp
+../../short_end.hpp
+
+../../short_begin.hpp
+
+../../short_end.hpp
+
+C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test/lambda_calculus.test.cpp
+lambda_calculus.hpp
+C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test/lambda_calculus.hpp
+cassert
+-
+iostream
+-
+exception
+-
+

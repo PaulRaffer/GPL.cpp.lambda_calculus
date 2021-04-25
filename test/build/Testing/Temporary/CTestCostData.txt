@@ -1,0 +1,3 @@
+lambda_calculus.test 1 0
+---
+lambda_calculus.test

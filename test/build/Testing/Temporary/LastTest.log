@@ -1,0 +1,24 @@
+Start testing: Apr 24 21:39 Mitteleuropäische Sommerzeit
+----------------------------------------------------------
+1/1 Testing: lambda_calculus.test
+1/1 Test: lambda_calculus.test
+Command: "C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test/build/lambda_calculus.test.exe"
+Directory: C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test/build
+"lambda_calculus.test" start time: Apr 24 21:39 Mitteleuropäische Sommerzeit
+Output:
+----------------------------------------------------------
+Assertion failed!
+
+Program: C:\Users\Paul\Paul\projects\GPL.cpp\GPL.cpp.lambda_calculus\test\build\lambda_calculus.test.exe
+File: C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test/lambda_calculus.test.cpp, Line 33
+
+Expression: True(True)(Null)
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Failed.
+"lambda_calculus.test" end time: Apr 24 21:39 Mitteleuropäische Sommerzeit
+"lambda_calculus.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Apr 24 21:39 Mitteleuropäische Sommerzeit
