@@ -27,8 +27,8 @@ class function :
 namespace std {
 
 
-function True = F(t,F(f, t(0)));
-function False = F(t,F(f, f(0)));
+function True = F(,F(t,F(f, t(0))));
+function False = F(,F(t,F(f, f(0))));
 /*
 function D = True;
 
@@ -39,39 +39,39 @@ function And = F(x,F(y, x(y)(x)));
 function Or = F(x,F(y, x(x)(y)));
 
 */
-function Succ = F(n, F(f,F(x, f(0)(F(,n(0)(f)(x)))))); //?
-function Zero = F(f,F(s, s(0)));
-function One = Succ(F(,Zero));
-function Two = Succ(F(,One));
-function Three = Succ(F(,Two));
-function Four = Succ(F(,Three));
-function Five = Succ(F(,Four));
-function Six = Succ(F(,Five));
-function Seven = Succ(F(,Six));
-function Eight = Succ(F(,Seven));
-function Nine = Succ(F(,Eight));
-function Ten = Succ(F(,Nine));
-function Eleven = Succ(F(,Ten));
-function Twelve = Succ(F(,Eleven));
-function Thirteen = Succ(F(,Twelve));
-function Fourteen = Succ(F(,Thirteen));
-function Fifteen = Succ(F(,Fourteen));
+function Succ = F(,F(n, F(f,F(x, f(0)(F(,n(0)(f)(x)))))));
+function Zero = F(,F(f,F(s, s(0))));
+function One = F(,Succ(0)(Zero));
+function Two = F(,Succ(0)(One));
+function Three = F(,Succ(0)(Two));
+function Four = F(,Succ(0)(Three));
+function Five = F(,Succ(0)(Four));
+function Six = F(,Succ(0)(Five));
+function Seven = F(,Succ(0)(Six));
+function Eight = F(,Succ(0)(Seven));
+function Nine = F(,Succ(0)(Eight));
+function Ten = F(,Succ(0)(Nine));
+function Eleven = F(,Succ(0)(Ten));
+function Twelve = F(,Succ(0)(Eleven));
+function Thirteen = F(,Succ(0)(Twelve));
+function Fourteen = F(,Succ(0)(Thirteen));
+function Fifteen = F(,Succ(0)(Fourteen));
 
-function IsZero = F(n, n(0)(F(,F(_,False)))(F(,True)));
-
-
-function Add = F(x,F(y, y(0)(F(,Succ))(x)));
-function Mul = F(x,F(y, F(f, y(0)(x(0)(f)))));
-function Pow = F(b,F(e, e(0)(b)));
+function IsZero = F(,F(n, n(0)(F(_,False))(True)));
 
 
-function Cons = F(a,F(b, F(s, s(0)(a)(b))));
-function Car = F(p, p(0)(F(,True)));
-function Cdr = F(p, p(0)(F(,False)));
+function Add = F(,F(x,F(y, y(0)(Succ)(x))));
+function Mul = F(,F(x,F(y, F(f, y(0)(x(0)(f))))));
+function Pow = F(,F(b,F(e, e(0)(b))));
 
 
-function T = F(p, Cons(F(,Succ(F(,Car(p)))))(F(,Car(p))));
-function Pred = F(n, Cdr(F(,n(0)(F(,T))(F(,Cons(F(,Zero))(F(,Zero)))))));
+function Cons = F(,F(a,F(b, F(s, s(0)(a)(b)))));
+function Car = F(,F(p, p(0)(True)));
+function Cdr = F(,F(p, p(0)(False)));
+
+
+function T = F(,F(p, Cons(0)(F(,Succ(0)(F(,Car(0)(p)))))(F(,Car(0)(p)))));
+function Pred = F(,F(n, Cdr(0)(F(,n(0)(T)(F(,Cons(0)(Zero)(Zero)))))));
 //function Sub = F(x,F(y, y(Pred)(x)));
 
 //function Fact = F(n, IsZero(n)(One)(Mul(n)(Fact(Pred(n)))));
@@ -82,27 +82,27 @@ function Pred = F(n, Cdr(F(,n(0)(F(,T))(F(,Cons(F(,Zero))(F(,Zero)))))));
 //		(F(f, F(n, IsZero(n)(n)(F(,IsZero(Pred(n))(n)(F(,Add(f(f)(Pred(Pred(n))))(f(f)(Pred(n))))))))));
 
 function Fib =
-		F(f, F(n, IsZero(n)
+		F(,F(f,F(n, IsZero(0)(n)
 			(n)
-			(F(,IsZero(F(,Pred(n)))
+			(F(,IsZero(0)(F(,Pred(0)(n)))
 				(n)
-				(F(,Add
-					(F(,f(f)(F(,Pred(n)))))
-					(F(,f(f)(F(,Pred(F(,Pred(n)))))))
+				(F(,Add(0)
+					(F(,f(f)(F(,Pred(0)(n)))))
+					(F(,f(f)(F(,Pred(0)(F(,Pred(0)(n)))))))
 				))
 			))
 		))(
-		F(f, F(n, IsZero(n)
+		F(f,F(n, IsZero(0)(n)
 			(n)
-			(F(,IsZero(F(,Pred(n)))
+			(F(,IsZero(0)(F(,Pred(0)(n)))
 				(n)
-				(F(,Add
-					(F(,f(f)(F(,Pred(n)))))
-					(F(,f(f)(F(,Pred(F(,Pred(n)))))))
+				(F(,Add(0)
+					(F(,f(f)(F(,Pred(0)(n)))))
+					(F(,f(f)(F(,Pred(0)(F(,Pred(0)(n)))))))
 				))
 			))
 		))
-		);
+		));
 
 
 } // namespace std

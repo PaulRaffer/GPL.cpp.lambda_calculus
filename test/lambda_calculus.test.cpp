@@ -72,7 +72,8 @@ auto main() -> int
 	//assert(to_int(Fact(Five)) == 121);
 	//IsZero(F(,Two));
 //Fib(F(,One));
-	::std::cout << '<' << to_int(Fib(F(,Six))) << '>';
+Fib(0)(Six);
+	::std::cout << '<' << to_int(Fib(0)(Six)) << '>';
 // 0 1 1 2 3 5 8 13
 	::std::cout << "All tests passed!\n";
 	#include "short_end.hpp"
