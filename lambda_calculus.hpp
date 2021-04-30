@@ -23,12 +23,14 @@ class function :
 	public: using type::operator bool;
 };
 
-
-namespace std {
 #include "short_begin.hpp"
+namespace std {
 
-function True = F(t,F(f, t));
-function False = F(t,F(f, f));
+
+function True = F(t,F(f, t(0)));
+function False = F(t,F(f, f(0)));
+/*
+function D = True;
 
 function If = F(x,F(t,F(f, x(t)(f))));
 
@@ -36,45 +38,73 @@ function Not = F(x, x(False)(True));
 function And = F(x,F(y, x(y)(x)));
 function Or = F(x,F(y, x(x)(y)));
 
+*/
+function Succ = F(n, F(f,F(x, f(0)(F(,n(0)(f)(x)))))); //?
+function Zero = F(f,F(s, s(0)));
+function One = Succ(F(,Zero));
+function Two = Succ(F(,One));
+function Three = Succ(F(,Two));
+function Four = Succ(F(,Three));
+function Five = Succ(F(,Four));
+function Six = Succ(F(,Five));
+function Seven = Succ(F(,Six));
+function Eight = Succ(F(,Seven));
+function Nine = Succ(F(,Eight));
+function Ten = Succ(F(,Nine));
+function Eleven = Succ(F(,Ten));
+function Twelve = Succ(F(,Eleven));
+function Thirteen = Succ(F(,Twelve));
+function Fourteen = Succ(F(,Thirteen));
+function Fifteen = Succ(F(,Fourteen));
 
-function Succ = F(n, F(f,F(x, f(n(f)(x)))));
-
-function Zero = F(f,F(s, s));
-function One = Succ(Zero);
-function Two = Succ(One);
-function Three = Succ(Two);
-function Four = Succ(Three);
-function Five = Succ(Four);
-function Six = Succ(Five);
-function Seven = Succ(Six);
-function Eight = Succ(Seven);
-function Nine = Succ(Eight);
-function Ten = Succ(Nine);
-function Eleven = Succ(Ten);
-function Twelve = Succ(Eleven);
-function Thirteen = Succ(Twelve);
-function Fourteen = Succ(Thirteen);
-function Fifteen = Succ(Fourteen);
-
-function IsZero = F(n, n(F(,False))(True));
-
-function Add = F(x,F(y, y(Succ)(x)));
-function Mul = F(x,F(y, F(f, y(x(f)))));
-function Pow = F(b,F(e, e(b)));
+function IsZero = F(n, n(0)(F(,F(_,False)))(F(,True)));
 
 
-function Cons = F(a,F(b, F(s, s(a)(b))));
-function Car = F(p, p(True));
-function Cdr = F(p, p(False));
+function Add = F(x,F(y, y(0)(F(,Succ))(x)));
+function Mul = F(x,F(y, F(f, y(0)(x(0)(f)))));
+function Pow = F(b,F(e, e(0)(b)));
 
 
-function T = F(p, Cons(Succ(Car(p)))(Car(p)));
-function Pred = F(n, Cdr(n(T)(Cons(Zero)(Zero))));
-function Sub = F(x,F(y, y(Pred)(x)));
+function Cons = F(a,F(b, F(s, s(0)(a)(b))));
+function Car = F(p, p(0)(F(,True)));
+function Cdr = F(p, p(0)(F(,False)));
 
-function Fact = F(n, IsZero(n)(One)(Mul(n)(Fact(Pred(n)))));
 
-#include "short_end.hpp"
+function T = F(p, Cons(F(,Succ(F(,Car(p)))))(F(,Car(p))));
+function Pred = F(n, Cdr(F(,n(0)(F(,T))(F(,Cons(F(,Zero))(F(,Zero)))))));
+//function Sub = F(x,F(y, y(Pred)(x)));
+
+//function Fact = F(n, IsZero(n)(One)(Mul(n)(Fact(Pred(n)))));
+/*function Fact = F(f, F(n, IsZero(n)(One)(Mul(F(,n))(F(,f(f)(Pred(n)))))))
+		(F(f, F(n, IsZero(n)(One)(Mul(F(,n))(F(,f(f)(Pred(n))))))));*/
+
+//function Fib = F(f, F(n, IsZero(n)(n)(F(,IsZero(Pred(n))(n)(F(,Add(f(f)(Pred(Pred(n))))(f(f)(Pred(n)))))))))
+//		(F(f, F(n, IsZero(n)(n)(F(,IsZero(Pred(n))(n)(F(,Add(f(f)(Pred(Pred(n))))(f(f)(Pred(n))))))))));
+
+function Fib =
+		F(f, F(n, IsZero(n)
+			(n)
+			(F(,IsZero(F(,Pred(n)))
+				(n)
+				(F(,Add
+					(F(,f(f)(F(,Pred(n)))))
+					(F(,f(f)(F(,Pred(F(,Pred(n)))))))
+				))
+			))
+		))(
+		F(f, F(n, IsZero(n)
+			(n)
+			(F(,IsZero(F(,Pred(n)))
+				(n)
+				(F(,Add
+					(F(,f(f)(F(,Pred(n)))))
+					(F(,f(f)(F(,Pred(F(,Pred(n)))))))
+				))
+			))
+		))
+		);
+
+
 } // namespace std
 
 
@@ -129,15 +159,17 @@ auto from_int(int const n, function N) -> function
 auto to_int(function N) -> int
 {
 	auto count = 0;
-	function inc_count = [&count](function x) {
+	function inc_count = [&count](function) { return [&count](function x) {
 				++count;
-				return x;
-			};
-	N(inc_count)(std::True);
+				return x(0);
+			};};
+	N(inc_count)(N);
 	return count;
 }
 
+
 } // namespace helper
+#include "short_end.hpp"
 
 } // namespace lambda_calculus
 } // namespace gpl
