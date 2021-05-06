@@ -61,7 +61,7 @@ function IsZero = F(,F(n, n(0)(F(_,False))(True)));
 
 
 function Add = F(,F(x,F(y, y(0)(Succ)(x))));
-function Mul = F(,F(x,F(y, F(f, y(0)(x(0)(f))))));
+function Mul = F(,F(x,F(y, F(f, y(0)(F(,x(0)(f)))))));
 function Pow = F(,F(b,F(e, e(0)(b))));
 
 
@@ -72,14 +72,76 @@ function Cdr = F(,F(p, p(0)(False)));
 
 function T = F(,F(p, Cons(0)(F(,Succ(0)(F(,Car(0)(p)))))(F(,Car(0)(p)))));
 function Pred = F(,F(n, Cdr(0)(F(,n(0)(T)(F(,Cons(0)(Zero)(Zero)))))));
-//function Sub = F(x,F(y, y(Pred)(x)));
+function Sub = F(,F(x,F(y, y(0)(Pred)(x))));
+
+//function Y = F(,F(f, F(x, f(0)(F(,x(0)(x))))(F(,F(x,F(z,f(0)(F(,x(0)(x)(z))))))))));
+function Y1 = F(,F(f, F(x, f(0)(F(,F(z,x(0)(x)(z))))(F(,F(x,F(z,f(0)(F(,x(0)(x)(z))))))))));
+
+function Y =
+	F(,F(f,
+		F(x,
+			f(0)(F(,x(0)(x)))
+		)(F(,F(x,
+			f(0)(F(,x(0)(x)))
+		)))
+	));
+
+//function Fact = F(,F(f, F(n, IsZero(0)(n)(One)(F(,Mul(0)(n)(F(,f(0)(F(,Pred(0)(n))))))))));
+function R = F(,F(f, F(n, IsZero(0)(n)(One)(F(,Mul(0)(n)(F(,f(0)(F(,Pred(0)(n))))))))));
+function R2 = F(,F(f, F(n, IsZero(0)(n)(One)(Two))));
+function Fact3 = F(,R(0)(Fact3));
+function Fact = F(,Y(0)(R));
+//(F(f, F(n, IsZero(0)(n)(One)(F(,Mul(0)(n)(F(,f(f)(F(,Pred(0)(n))))))))));
+/*
+F(x,
+	F(n, IsZero(0)(n)(One)(F(,Mul(0)(n)(F(, x(0)(x) (F(,Pred(0)(n)))))))))
+)(F(,F(x,
+	F(n, IsZero(0)(n)(One)(F(,Mul(0)(n)(F(, x(0)(x) (F(,Pred(0)(n)))))))))
+)))*/
 
 //function Fact = F(n, IsZero(n)(One)(Mul(n)(Fact(Pred(n)))));
-/*function Fact = F(f, F(n, IsZero(n)(One)(Mul(F(,n))(F(,f(f)(Pred(n)))))))
-		(F(f, F(n, IsZero(n)(One)(Mul(F(,n))(F(,f(f)(Pred(n))))))));*/
+function Fact1 =
+		F(,
+			F(f,
+				F(n,IsZero(0)(n)
+					(One)
+					(F(,Mul(0)
+						(n)
+						(F(,
+							f(f)(F(,Pred(0)(n)))
+						))
+					))
+				)
+			)
+			(F(f,
+				F(n,IsZero(0)(n)
+					(One)
+					(F(,Mul(0)
+						(n)
+						(F(,
+							f(f)(F(,Pred(0)(n)))
+						))
+					))
+				)
+			))
+		);
 
-//function Fib = F(f, F(n, IsZero(n)(n)(F(,IsZero(Pred(n))(n)(F(,Add(f(f)(Pred(Pred(n))))(f(f)(Pred(n)))))))))
-//		(F(f, F(n, IsZero(n)(n)(F(,IsZero(Pred(n))(n)(F(,Add(f(f)(Pred(Pred(n))))(f(f)(Pred(n))))))))));
+function Fact2 = F(,F(f, F(n, IsZero(0)(n)(One)(F(,Mul(0)(n)(F(,f(0)(F(,Pred(0)(n)))))))))(Fact2));
+
+
+
+function FibR =
+		//F(,F(f,F(n, n)));
+		F(,F(f,F(n, IsZero(0)(n)
+			(n)
+			(F(,IsZero(0)(F(,Pred(0)(n)))
+				(n)
+				(F(,Add(0)
+					(F(,f(0)(f)(F(,Pred(0)(n)))))
+					(F(,f(0)(f)(F(,Pred(0)(F(,Pred(0)(n)))))))
+				))
+			))
+		)));
 
 function Fib =
 		F(,F(f,F(n, IsZero(0)(n)
@@ -110,7 +172,7 @@ function Fib =
 
 namespace helper { // interface
 
-auto Null = function{};
+auto Null = F(,function{});
 
 auto from_bool(bool b) -> function;
 auto to_bool(function fb) -> bool;
@@ -132,16 +194,16 @@ auto to_bool(function B) -> bool
 try {
 	using namespace std;
 	if (
-	   !B(Null)(Null)
-	&& !B(Null)(True)
-	&&  B(True)(Null)
-	&&  B(True)(True))
+	   !B(0)(Null)(Null)
+	&& !B(0)(Null)(True)
+	&&  B(0)(True)(Null)
+	&&  B(0)(True)(True))
 		return true;
 	else if (
-	   !B(Null)(Null)
-	&&  B(Null)(True)
-	&& !B(True)(Null)
-	&&  B(True)(True))
+	   !B(0)(Null)(Null)
+	&&  B(0)(Null)(True)
+	&& !B(0)(True)(Null)
+	&&  B(0)(True)(True))
 		return false;
 	else
 		throw -1;
@@ -163,7 +225,7 @@ auto to_int(function N) -> int
 				++count;
 				return x(0);
 			};};
-	N(inc_count)(N);
+	N(0)(inc_count)(N);
 	return count;
 }
 
