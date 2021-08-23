@@ -4,4 +4,7 @@
 // (See accompanying file LICENSE or copy at
 // https://www.boost.org/LICENSE_1_0.txt)
 
+#undef FUNC
 #undef F
+#undef LF
+#undef L

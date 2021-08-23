@@ -62,10 +62,10 @@ RM = "C:/Program Files/CMake/bin/cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test
+CMAKE_SOURCE_DIR = C:/Users/Paul/paul/projects/GPL.cpp.2/GPL.cpp.lambda_calculus/test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test/build
+CMAKE_BINARY_DIR = C:/Users/Paul/paul/projects/GPL.cpp.2/GPL.cpp.lambda_calculus/test/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/lambda_calculus.test.dir/depend.make
@@ -79,16 +79,16 @@ include CMakeFiles/lambda_calculus.test.dir/flags.make
 CMakeFiles/lambda_calculus.test.dir/lambda_calculus.test.cpp.obj: CMakeFiles/lambda_calculus.test.dir/flags.make
 CMakeFiles/lambda_calculus.test.dir/lambda_calculus.test.cpp.obj: CMakeFiles/lambda_calculus.test.dir/includes_CXX.rsp
 CMakeFiles/lambda_calculus.test.dir/lambda_calculus.test.cpp.obj: ../lambda_calculus.test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lambda_calculus.test.dir/lambda_calculus.test.cpp.obj"
-	C:/CodeBlocks/gcc-8.2-32/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lambda_calculus.test.dir/lambda_calculus.test.cpp.obj -c C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test/lambda_calculus.test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:/Users/Paul/paul/projects/GPL.cpp.2/GPL.cpp.lambda_calculus/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lambda_calculus.test.dir/lambda_calculus.test.cpp.obj"
+	C:/CodeBlocks/gcc-8.2-32/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lambda_calculus.test.dir/lambda_calculus.test.cpp.obj -c C:/Users/Paul/paul/projects/GPL.cpp.2/GPL.cpp.lambda_calculus/test/lambda_calculus.test.cpp
 
 CMakeFiles/lambda_calculus.test.dir/lambda_calculus.test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lambda_calculus.test.dir/lambda_calculus.test.cpp.i"
-	C:/CodeBlocks/gcc-8.2-32/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test/lambda_calculus.test.cpp > CMakeFiles/lambda_calculus.test.dir/lambda_calculus.test.cpp.i
+	C:/CodeBlocks/gcc-8.2-32/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:/Users/Paul/paul/projects/GPL.cpp.2/GPL.cpp.lambda_calculus/test/lambda_calculus.test.cpp > CMakeFiles/lambda_calculus.test.dir/lambda_calculus.test.cpp.i
 
 CMakeFiles/lambda_calculus.test.dir/lambda_calculus.test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lambda_calculus.test.dir/lambda_calculus.test.cpp.s"
-	C:/CodeBlocks/gcc-8.2-32/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test/lambda_calculus.test.cpp -o CMakeFiles/lambda_calculus.test.dir/lambda_calculus.test.cpp.s
+	C:/CodeBlocks/gcc-8.2-32/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:/Users/Paul/paul/projects/GPL.cpp.2/GPL.cpp.lambda_calculus/test/lambda_calculus.test.cpp -o CMakeFiles/lambda_calculus.test.dir/lambda_calculus.test.cpp.s
 
 # Object files for target lambda_calculus.test
 lambda_calculus_test_OBJECTS = \
@@ -101,7 +101,7 @@ lambda_calculus.test.exe: CMakeFiles/lambda_calculus.test.dir/lambda_calculus.te
 lambda_calculus.test.exe: CMakeFiles/lambda_calculus.test.dir/build.make
 lambda_calculus.test.exe: CMakeFiles/lambda_calculus.test.dir/linklibs.rsp
 lambda_calculus.test.exe: CMakeFiles/lambda_calculus.test.dir/objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable lambda_calculus.test.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:/Users/Paul/paul/projects/GPL.cpp.2/GPL.cpp.lambda_calculus/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable lambda_calculus.test.exe"
 	"C:/Program Files/CMake/bin/cmake.exe" -E rm -f CMakeFiles/lambda_calculus.test.dir/objects.a
 	C:/CodeBlocks/gcc-8.2-32/bin/ar.exe cr CMakeFiles/lambda_calculus.test.dir/objects.a @CMakeFiles/lambda_calculus.test.dir/objects1.rsp
 	C:/CodeBlocks/gcc-8.2-32/bin/c++.exe -Wl,--whole-archive CMakeFiles/lambda_calculus.test.dir/objects.a -Wl,--no-whole-archive -o lambda_calculus.test.exe -Wl,--out-implib,liblambda_calculus.test.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/lambda_calculus.test.dir/linklibs.rsp
@@ -116,6 +116,6 @@ CMakeFiles/lambda_calculus.test.dir/clean:
 .PHONY : CMakeFiles/lambda_calculus.test.dir/clean
 
 CMakeFiles/lambda_calculus.test.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test/build C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test/build C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test/build/CMakeFiles/lambda_calculus.test.dir/DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" C:/Users/Paul/paul/projects/GPL.cpp.2/GPL.cpp.lambda_calculus/test C:/Users/Paul/paul/projects/GPL.cpp.2/GPL.cpp.lambda_calculus/test C:/Users/Paul/paul/projects/GPL.cpp.2/GPL.cpp.lambda_calculus/test/build C:/Users/Paul/paul/projects/GPL.cpp.2/GPL.cpp.lambda_calculus/test/build C:/Users/Paul/paul/projects/GPL.cpp.2/GPL.cpp.lambda_calculus/test/build/CMakeFiles/lambda_calculus.test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/lambda_calculus.test.dir/depend
 

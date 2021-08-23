@@ -20,17 +20,19 @@ short_end.hpp
 
 ../../short_end.hpp
 
-C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test/lambda_calculus.test.cpp
+C:/Users/Paul/paul/projects/GPL.cpp.2/GPL.cpp.lambda_calculus/test/lambda_calculus.test.cpp
 lambda_calculus.hpp
-C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test/lambda_calculus.hpp
+C:/Users/Paul/paul/projects/GPL.cpp.2/GPL.cpp.lambda_calculus/test/lambda_calculus.hpp
 cassert
 -
 iostream
 -
-exception
--
 short_begin.hpp
-C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test/short_begin.hpp
+C:/Users/Paul/paul/projects/GPL.cpp.2/GPL.cpp.lambda_calculus/test/short_begin.hpp
 short_end.hpp
-C:/Users/Paul/Paul/projects/GPL.cpp/GPL.cpp.lambda_calculus/test/short_end.hpp
+C:/Users/Paul/paul/projects/GPL.cpp.2/GPL.cpp.lambda_calculus/test/short_end.hpp
+short_begin.hpp
+C:/Users/Paul/paul/projects/GPL.cpp.2/GPL.cpp.lambda_calculus/test/short_begin.hpp
+short_end.hpp
+C:/Users/Paul/paul/projects/GPL.cpp.2/GPL.cpp.lambda_calculus/test/short_end.hpp
 
