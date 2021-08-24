@@ -104,13 +104,13 @@ FUNC(Iota,
 inline namespace bckw {
 
 FUNC(B,
-	F(x,F(y,F(z
+	F(x,F(y,F(z,
 		x(y(z))
 	)))
 );
 
 FUNC(C,
-	F(x,F(y,F(z
+	F(x,F(y,F(z,
 		x(z)(y)
 	)))
 );
@@ -118,7 +118,7 @@ FUNC(C,
 using sk::basic_K;
 using sk::K;
 
-FUNC(W
+FUNC(W,
 	F(x,F(y,
 		x(y)(y)
 	))

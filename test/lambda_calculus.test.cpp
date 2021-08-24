@@ -95,7 +95,7 @@ void all()
 
 } // namespace test__
 
-auto main2() -> int
+auto main() -> int
 {
 	#include "short_begin.hpp"
 	
@@ -111,11 +111,11 @@ auto main2() -> int
 	#include "short_end.hpp"
 }
 
-auto main() -> int
+auto main2() -> void
 {
 	#include "short_begin.hpp"
 
-	using namespace ::gpl::lambda_calculus::bckw;
+	using namespace ::gpl::lambda_calculus::ski;
 
 	I(S)(K)(K);
 
